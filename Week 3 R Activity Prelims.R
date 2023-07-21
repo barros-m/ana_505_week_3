@@ -2,28 +2,32 @@
 #and sets it to where I want to save and fetch files
 #TASK: fill in between the parentheses if needed. 
 #If not needed, make the two lines a comment
-getwd()
-setwd()
+#getwd()
+#setwd()
 
 #This brings the 'Titanic' data into my environment from Base R (Run this)
 Titanic
 
 #This code saves the Titanic data as a dataframe with a new name
 #TASK: Save the Titanic data as a dataframe with a new name that includes your first name
+MatheusTitanic <- data.frame(Titanic)
 #for example I would name my data AnnaTitanic
 
 #This code chunk allows me to see the top 2 rows of my data
 #TASK: Write the code that returns the top rows
-
+MatheusTitanic[0:2, ]
 
 #This code chunk shows me the internal structure 
 #Task: Write the code that shows the number of rows, columns, column names, class of columns   
-
+nrow(MatheusTitanic) # num of rows
+ncol(MatheusTitanic) # num of columns
+names(MatheusTitanic) 
+sapply(MatheusTitanic, class)
 
 #This code chunk shows me some basic summary stats
 #Such as Min, Max, Mean. Quartiles...
 #Task: Write the code that gives summary stats
-
+summary(MatheusTitanic)
 
 #This allows me to save one column as its own object ('values' in the Environment)
 #Task: Write the code to create an object for just the Sex column 
