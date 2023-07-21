@@ -33,42 +33,47 @@ summary(MatheusTitanic)
 #Task: Write the code to create an object for just the Sex column 
 #and write the code to create an object for just the Age column 
 #(these should show as values in the environment window, not as 'datasets'Data')
+Sexes <- MatheusTitanic$Sex
+Ages <- MatheusTitanic$Age
 
+#class(Sexes)
+#Sexes
 
 #This takes the individual objects ('values' in the Environment) and creates a dataframe
 #Once I do this, I can see the Data in the Environment 
 #Task: Write the code to create one new data.frame from the Sex and Age values you just created
-
+sex_age_df <- data.frame(Sexes, Ages)
 
 #This code chunk creates a subset from my dataset
 #Note that the subset only appears in the Console (not the Environment)
 #Task: Write the code to create a subset of the data where the Freq is > 25
 #If I wanted to save the subset, I would need to name it as done in the code above
-
+sex_age_subset_df <- subset(MatheusTitanic, Freq > 25)
 
 #This shows me how many rows are in my dataset and
 #TASK: Write the code that returns the number of rows
-
+nrow(MatheusTitanic)
 
 #This shows me how many columns are in my dataset
 #TASK: Write the code that returns the number of columns
-
+ncol(MatheusTitanic)
 
 #This also shows me how many rows and columns with just one command
 #TASK: Write the code that returns the number of rows and columns with just one command
-
+dim(MatheusTitanic)
 
 #This code will install the ggplot2 package
 #TASK: Write the code that installs the ggplot2 package
-  
+install.packages("ggplot2")
   
 #This code calls the ggplot2 package so I can use its functions
 #Task: Write the code that 'calls' the ggplot2 package
+library(ggplot2)
 
 #This code creates a bar chart of the number of passengers that survived 
 #and did not survive (2 bars)
 #Task: replace the dataframe name and column names to create the chart
 #(you should see the chart in the Plots window)
-ggplot(Yourdataframename, aes(columnname, columnname)) +
+ggplot(MatheusTitanic, aes(Survived, Freq)) +
   geom_col()
 
